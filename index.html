@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tutorial Pusher</title>
+    <script src="https://js.pusher.com/4.1/pusher.min.js"></script>
+</head>
+<body>
+    <script type="text/javascript">
+        Pusher.logToConsole = true;
+        var pusher = new Pusher('8f2c72fd3627f45e0429',{
+            cluster     :'ap2',
+            encrypted   : true
+        });
+        var channel = pusher.subscribe('my-channel');
+        channel.bind('my-event', function(data){
+            alert(data.message)
+        });
+    </script>
+</body>
+</html>
